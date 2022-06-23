@@ -1,0 +1,72 @@
+
+import java.util.*;
+public class Main
+{
+ public static int search(int arr[],int key)
+    {
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i]==key)
+            return i;
+        }
+        return -1;
+    }
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int arr[]=new int[n];
+		for(int i=0;i<n;i++)
+		{
+		    arr[i]=sc.nextInt();
+		}
+		int k=sc.nextInt();
+		int s=search(arr,k);
+		System.out.println("Element is present at position "+s);
+	}
+}
+
+
+// remove/shift
+import java.util.*;
+public class Main
+{
+    public static void remove(int arr[], int k)
+    {
+        for(int i=k;i<=arr.length-2;i++)
+          {
+              arr[i]=arr[i+1];
+          }
+          arr[arr.length-1]=0;
+          for(int i=0;i<arr.length-1;i++)
+          {
+              System.out.print(arr[i]+" ");
+          }
+    }
+    or
+     public static void remove(int arr[], int k)
+    {
+        for(int i=k;i<arr.length-1;i++)
+          {
+              arr[i]=arr[i+1];
+          }
+          arr[arr.length-1]=0;
+          for(int i=0;i<arr.length-1;i++)
+          {
+              System.out.print(arr[i]+" ");
+          }
+    }
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int arr[]=new int[n];
+		for(int i=0;i<n;i++)
+		{
+		    arr[i]=sc.nextInt();
+		}
+		int k=sc.nextInt();
+	remove(arr,k);
+	}
+}
+
+
+
