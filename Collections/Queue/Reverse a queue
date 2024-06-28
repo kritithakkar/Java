@@ -1,0 +1,30 @@
+class GfG{
+    //Function to reverse the queue.
+    public Queue<Integer> rev(Queue<Integer> q){
+        //add code here.
+        Stack<Integer> st= new Stack<Integer>();
+        while(!q.isEmpty())
+        {
+            st.add(q.peek());
+            q.remove();
+        }
+        while(!st.isEmpty())
+        {
+            q.add(st.peek());
+            st.pop();
+        }
+        return q;
+    }
+} 
+///
+public Queue<Integer> rev(Queue<Integer> q){
+        Stack<Integer> S = new Stack<>();
+        while(!q.isEmpty()){
+            S.push(q.remove());
+        }
+        while(!S.isEmpty()){
+            q.add(S.pop());
+        }
+        return q;
+    }
+///
