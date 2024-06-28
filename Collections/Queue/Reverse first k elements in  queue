@@ -1,0 +1,51 @@
+
+class GfG {
+    // Function to reverse first k elements of a queue.
+    public Queue<Integer> modifyQueue(Queue<Integer> q, int k) {
+        if (q.isEmpty() || k <= 0 || k > q.size()) {
+            return q; // No modification needed if k is invalid or queue is empty
+        }
+        
+        Stack<Integer> stack = new Stack<>();
+        // Step 1: Dequeue the first K elements and push them onto the stack
+        for (int i = 0; i < k; i++) {
+            stack.push(q.poll());
+        }
+        
+        // Step 2: Rebuild the queue by popping elements from the stack
+        // and enqueueing them back into the queue
+        while (!stack.isEmpty()) {
+            q.offer(stack.pop());
+        }
+        
+        // Step 3: Enqueue the remaining elements of the original queue
+        // after the reversed first K elements
+        for (int i = 0; i < q.size() - k; i++) {
+            q.offer(q.poll());
+        }
+        
+        return q;
+    }
+}
+/////
+class GfG {
+    // Function to reverse first k elements of a queue.
+    public Queue<Integer> modifyQueue(Queue<Integer> q, int k) {
+        // add code here.
+       Stack<Integer>st =new Stack<Integer>();
+        for(int i=0;i<k;i++)
+        {
+            st.push(q.poll());
+        }
+        while(!st.isEmpty())
+        {
+            q.add(st.pop());
+        }
+        for(int i=0;i<q.size()-k;i++)
+        {
+            q.add(q.peek());
+            q.remove();
+        }
+        return q;
+    }
+}
