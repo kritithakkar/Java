@@ -1,0 +1,38 @@
+public static void eraseAt(ArrayDeque<Integer> deq , int X)
+{
+    //Your code here
+    Iterator<Integer> iterator = deq.iterator();
+    int index = 0;
+    while (iterator.hasNext()) {
+        iterator.next();
+        if (index == X) {
+            iterator.remove();
+            break;
+        }
+        index++;
+    }
+}
+
+//Function to erase the elements in range start (inclusive), end (exclusive).
+public static void eraseInRange(ArrayDeque<Integer> deq , int start, int end)
+{
+    //Your code here
+     Iterator<Integer> iterator = deq.iterator();
+        int index = 0;
+        
+        // Traverse the deque and remove elements in the specified range
+        while (iterator.hasNext()) {
+            iterator.next();
+            if (index >= start && index < end) {
+                iterator.remove();
+            }
+            index++;
+        }
+}
+
+//Function to erase all the elements in the deque.
+public static void eraseAll(ArrayDeque<Integer> deq )
+{
+    //Your code here
+    deq.clear();
+}
