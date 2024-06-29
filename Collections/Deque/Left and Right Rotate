@@ -1,0 +1,27 @@
+public static void left_Rotate_Deq_ByK(ArrayDeque<Integer> deque, int n, int k)
+{
+     if (deque.isEmpty() || k == 0) {
+            return;
+        }
+    //Your code here
+    k = k% n;
+    for(int i=0;i<k;i++)
+    {
+        int ele = deque.pollFirst();
+        deque.offerLast(ele);
+    }
+}
+
+//Function to rotate deque by k places in clockwise direction.
+public static void right_Rotate_Deq_ByK(ArrayDeque<Integer> deque, int n, int k)
+{
+     if (deque.isEmpty() || k == 0) {
+            return;
+        }
+    k = k % n;
+    for(int i=0;i<k;i++)
+    {
+        int ele = deque.pollLast();
+        deque.offerFirst(ele);
+    }
+}
