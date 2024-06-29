@@ -1,0 +1,32 @@
+public static void printDeque(ArrayDeque<Integer> deq)
+{
+   //Your code here
+   while(!deq.isEmpty())
+   {
+       System.out.print(deq.removeFirst()+" ");
+   }
+   System.out.println();
+}
+////
+public static void printDeque(ArrayDeque<Integer> deq)
+{
+   //Your code here
+   if(deq == null || deq.isEmpty()){
+       return;
+   }
+   Iterator it = deq.iterator();
+   
+   while(it.hasNext()){
+       System.out.print(it.next() + " ");
+   }
+   System.out.println();
+}
+
+///
+public static void printDeque(ArrayDeque<Integer> deq)
+{
+    for (Integer element : deq) {
+        System.out.print(element + " ");
+    }
+    System.out.println(); // Print a newline after all elements
+}
