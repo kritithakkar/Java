@@ -1,0 +1,10 @@
+public static ArrayList<Integer> fillArrayList(int arr[], int n)
+{
+    //Your code here
+    ArrayList<Integer> st = new ArrayList<Integer>();
+    for(int s:arr)
+    {
+        st.add(s);
+    }
+    return st;
+}
