@@ -1,0 +1,38 @@
+Heigth balanced BST
+
+A height-balanced binary search tree is a binary tree where the depth of the two subtrees of every node never differs by more than one. Given a sorted array, the middle element should be the root of the BST. 
+The elements on the left half of the array become part of the left subtree, and the elements on the right half become part of the right subtree. This ensures that the tree remains balanced.
+Steps to Solve the Problem
+Identify the Middle Element: For a sorted array, the middle element is chosen as the root to ensure balance.
+Recursive Subdivision: Divide the array into two halves around the middle element. Recursively apply the same process to each half.
+Base Case: If the low index exceeds the high index, return null, indicating no nodes in this part of the tree.
+Construct the Tree: Create a node for the middle element and recursively build its left and right subtrees.
+Pseudocode
+Define a function convertToBST(low, high, array).
+If low > high, return null.
+Calculate the middle index: mid = low + (high - low) / 2.
+Create a new node with array[mid].
+Assign the left child of the node to the result of convertToBST(low, mid - 1, array).
+Assign the right child of the node to the result of convertToBST(mid + 1, high, array).
+Return the node.
+
+C++
+class Solution {
+  public:
+   Node* convert(vector<int> &nums, int start, int end){
+        if(start > end){
+            return NULL;
+        }
+        int mid = start + (end - start)/2;
+        Node* head = new Node(nums[mid]);
+        head->left = convert(nums, start, mid - 1);
+        head->right = convert(nums, mid + 1, end);
+        return head;
+    }
+    
+    Node* sortedArrayToBST(vector<int>& nums) {
+        int n = nums.size();
+        return convert(nums, 0, n - 1);
+    }
+
+};
