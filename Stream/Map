@@ -1,0 +1,16 @@
+package Streams;
+
+import java.util.List;
+import java.util.stream.Stream;
+
+public class Map {
+    public static void main(String[] args) {
+        List<String> l1 = List.of("hello","bye","yes","Dell");
+        List<String> m = l1.stream()
+                .map((String g)->g.toUpperCase())
+                        .toList();
+        System.out.println(m);
+
+    }
+}
+
