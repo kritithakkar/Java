@@ -1,0 +1,15 @@
+
+public static int maxUsingStreams(int[] arr) {
+    // Your code here
+    // Use stream().max().getAsInt()
+    return Arrays.stream(arr).max().getAsInt();
+// if empty 
+OptionalInt maxOpt = Arrays.stream(empty).max();
+if (maxOpt.isPresent()) {
+    System.out.println(maxOpt.getAsInt());
+} else {
+    System.out.println("No max value found");
+}
+
+or 
+}return Arrays.stream(arr).max().orElse(0);
