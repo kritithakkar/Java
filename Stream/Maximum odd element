@@ -1,0 +1,5 @@
+public static int filterUsingStreams(int[] arr) {
+    // Your code here
+    // Use filter() to get only odd elements then apply max().getAsInt()
+    return Arrays.stream(arr).filter((int s)->s%2!=0).max().getAsInt();
+}
