@@ -1,0 +1,20 @@
+package Streams;
+
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Stream;
+
+public class FlatMap {
+    public static void main(String[] args) {
+        List<List<String>> l1 = List.of(List.of("Hello","I","am"),List.of("this","is","data"),List.of("writing","text"));
+        Stream<String> s = l1.stream()
+                .flatMap(Collection::stream).map((String q)-> q.toUpperCase()).peek(word->System.out.print(word+" "));
+        s.forEach(str->{});
+
+;       // s.forEach(System.out::println);
+       // s.forEach((String p)-> System.out.println(p));
+        /*List<String> p = s.toList();
+        System.out.println(p);*/
+
+    }
+}
