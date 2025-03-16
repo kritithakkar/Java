@@ -1,0 +1,6 @@
+public static int sumUsingStreams(int[] arr) {
+    // Your code here
+    // use stream.sum()
+
+    return Arrays.stream(arr).sum();
+}
