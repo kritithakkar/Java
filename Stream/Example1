@@ -1,0 +1,19 @@
+package Streams;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class Example1 {
+    public static void main(String[] args){
+        List<Integer> s = Arrays.asList(2000, 3000, 4000, 5000, 10000);
+//s.add(2000);
+//s.add(3000);
+//s.add(4000);
+//s.add(1000);
+                long r = s.stream()
+                        .filter((Integer p) -> p > 3000).count();
+        System.out.println(r);
+
+            }
+        }
+
