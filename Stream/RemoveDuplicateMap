@@ -1,0 +1,19 @@
+package Streams;
+
+import java.util.*;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class RemoveDuplicateMap {
+    public static void main(String[] args) {
+        List<String> al = List.of("apple", "orange", "apple", "pear" );
+        Map<String, String > map = al.stream()
+                .collect(Collectors.toMap(
+                        a-> a,
+                        b-> b,
+                        (d,e)->d
+                ));
+        List<String> unique = new ArrayList<>(map.values());
+        System.out.println(unique);
+    }
+}
