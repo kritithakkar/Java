@@ -1,0 +1,16 @@
+package Streams;
+
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class Filters {
+    public static void main(String[] args) {
+        Stream<String> s = Stream.of("Hello","Hi","Bye","Advantage","define");
+        Stream<String> p = s.filter((String i)-> i.length()>= 3);
+       // List<String> m = p.collect(Collectors.toList());
+        List<String> d = p.toList();
+        System.out.println(d);
+
+    }
+}
