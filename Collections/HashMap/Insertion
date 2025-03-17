@@ -1,0 +1,18 @@
+package HashMaps;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Insertion {
+    public static void main(String[] args) {
+        HashMap<Integer, String> hm1 = new HashMap<>();
+        hm1.put(1,"Orange");
+        hm1.put(2,"Apple");
+        hm1.put(3,"Pear");
+        hm1.put(4,"Banana");
+        System.out.println(hm1);
+        for (Map.Entry<Integer, String> entry : hm1.entrySet()) {
+            System.out.println(entry.getKey() + " = " + entry.getValue());
+        }
+    }
+}
