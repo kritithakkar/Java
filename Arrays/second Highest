@@ -1,0 +1,28 @@
+package Arrays;
+
+public class SecondHighest {
+    public static void highest(int arr[], int n)
+    {
+        int ihighest = Integer.MIN_VALUE;
+        int shighest = Integer.MIN_VALUE;
+        for(int i=0;i<n;i++)
+        {
+            if(arr[i]>ihighest)
+            {
+                shighest = ihighest;
+                ihighest = arr[i];
+            }
+            if(arr[i]> shighest && arr[i] != ihighest)
+            {
+                shighest = arr[i];
+            }
+        }
+        System.out.println(shighest);
+
+    }
+    public static void main(String[] args) {
+       int arr[] = {2,5,4,2,1,9,7};
+       int n = arr.length;
+       highest(arr,n);
+    }
+}
