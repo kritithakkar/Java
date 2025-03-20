@@ -1,0 +1,24 @@
+package Maths;
+
+public class ArrayToFraction {
+    public static int  gcd(int a, int b)
+    {
+        if(b==0)
+            return a;
+        return gcd(b,a%b);
+    }
+    public static void main(String[] args) {
+        int[] s = {3,9};
+        int[] p = {2,7};
+        int num1 = s[0];
+        int num2 = p[0];
+        int deno1 = s[1];
+        int deno2 = p[1];
+        int Cdeno = deno1*deno2;
+        int num = num1*deno2 + num2*deno1;
+        int gcd = gcd(num,Cdeno);
+        num = num/gcd;
+        Cdeno = Cdeno/gcd;
+        System.out.println(num+ "/"+ Cdeno);
+    }
+}
